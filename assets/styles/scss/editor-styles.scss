@@ -1,0 +1,23 @@
+// Import foundation styles to the Gutenburg editor
+@import "../../../node_modules/foundation-sites/scss/foundation";
+@import "settings";
+@import "mixins";
+@include foundation-xy-grid-classes;
+@import "global";
+
+.wp-block{
+    max-width: 1160px;
+}
+.wp-block[data-align=wide] { /* it can be "data-align=full" and also "right", "left" and "center" */
+    max-width: 1228px;
+}
+.wp-block.is-selected {
+    background-color: #e0e0e0;
+}
+
+.acf-block-preview {
+	pointer-events:none;
+	.swiper {
+		display: none;
+	}	
+}

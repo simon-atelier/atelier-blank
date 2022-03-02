@@ -1,0 +1,29 @@
+@import "../../../assets/styles/scss/settings";
+@import "../../../assets/styles/scss/mixins";
+
+.button-block {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	.button {
+		font-size: 1rem;
+	}
+}
+
+@include breakpoint(large up) {
+	.button-block {
+		.button {
+			&.small {
+				font-size: 0.875rem;
+			}
+			&.medium {
+				font-size: 1rem;
+			}
+			&.large {
+				font-size: 1.625rem;
+			}
+			&.xlarge {
+				font-size: 2rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.breadcrumbs-container {
+	background: $white;
+	margin-bottom: 50px;
+	padding: 20px 0;
+	.breadcrumbs {
+		@include flex-center(flex-start, flex-start, row);
+		margin: 0;
+		li {
+			padding-left: 30px;
+			&:first-child {
+				padding-left: 0;
+			}
+			&:after {
+				position: absolute;
+			}
+		}
+	}
+}
+
+@include breakpoint(medium up) {
+	.breadcrumbs-container {
+		// margin-bottom: $block-margin-bottom;
+		padding: 30px;
+	}
+}

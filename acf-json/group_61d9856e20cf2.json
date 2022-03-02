@@ -1,0 +1,120 @@
+{
+    "key": "group_61d9856e20cf2",
+    "title": "Latest news",
+    "fields": [
+        {
+            "key": "field_61d9a8f50620e",
+            "label": "Title",
+            "name": "ln_title",
+            "type": "text",
+            "instructions": "Optional",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61d9a8fd0620f",
+            "label": "Subtitle",
+            "name": "ln_subtitle",
+            "type": "text",
+            "instructions": "Optional",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61d985759b23d",
+            "label": "How many posts to show?",
+            "name": "ln_posts_to_show",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_61d9858d9b23e",
+            "label": "Post type",
+            "name": "ln_post_type",
+            "type": "select",
+            "instructions": "Defaults to posts",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "post": "post",
+                "page": "page",
+                "attachment": "attachment",
+                "revision": "revision",
+                "nav_menu_item": "nav_menu_item",
+                "custom_css": "custom_css",
+                "customize_changeset": "customize_changeset",
+                "oembed_cache": "oembed_cache",
+                "user_request": "user_request",
+                "wp_block": "wp_block",
+                "wp_template": "wp_template",
+                "acf-field-group": "acf-field-group",
+                "acf-field": "acf-field"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/latest-news"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1641654560
+}

@@ -1,0 +1,47 @@
+@import "../../../assets/styles/scss/settings";
+@import "../../../assets/styles/scss/mixins";
+.acf-block-preview {
+	.breadcrumbs {
+		display: none;
+	}
+}
+
+
+.text-image {
+	.image_text-image {
+		position: relative;
+		height: 100%;
+		img {
+			@include object-fit;
+		}
+		video {
+			@include object-fit;
+		}
+	}
+	
+	.image_text-content {
+		position: relative;
+		&-background {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+			img {
+				@include object-fit;		
+			}
+		}
+		&-text {
+			padding: 80px 60px;
+			z-index: 2;
+			background: $secondary-color;
+			background: fade-out($primary-color, 0.1);
+			position: relative;
+			h3, p {
+				color:$white;	
+			}
+			p {
+
+			}
+		}
+	}
+}

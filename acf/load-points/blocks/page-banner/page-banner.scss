@@ -1,0 +1,67 @@
+@import "../../../assets/styles/scss/settings";
+@import "../../../assets/styles/scss/mixins";
+.acf-block-preview {
+	.page-banner { 
+		height: 400px;
+	}
+	.breadcrumbs-container {
+		display: none;
+	}
+}
+
+.page-banner {
+	background: #eee;
+	height: 600px;
+	position: relative;
+	.page_banner-background {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		img, video {
+			@include object-fit;
+		}
+	}
+	.page_banner-content {
+		position: absolute;
+		z-index: 3;
+		bottom:0;
+		height: 400px;
+		width: 100%;
+		padding: 0 20px 30px;
+		background: rgb(0,0,0);
+		background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+		@include flex-center(space-between, flex-end, row);
+		transition: background 0.3s;
+		&-title {
+			font-family: $header-font-family;
+			font-size: 4.25rem;
+			color: $white;
+			line-height: 1;
+			margin-bottom: 5px;
+			transition: transform 0.3s;
+		}
+		&-subtitle {
+			font-size: 1.5rem;
+			color: $white;
+			transition: transform 0.3s;
+		}
+		
+	}
+	&:hover {
+		.page_banner-content {
+			background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+			&-title, &-subtitle { 
+				transform: translateY(-10px);
+			}
+		}
+	}
+}
+
+@include breakpoint(medium up) {
+	.page-banner {
+		.page_banner-content {
+			padding: 0 120px 30px;
+		}
+	}
+}

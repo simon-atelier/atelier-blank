@@ -1,0 +1,22 @@
+@import "../../../assets/styles/scss/settings";
+@import "../../../assets/styles/scss/mixins";
+
+.social-share {
+	.footer_share {
+		font-size: 1.25rem;
+		font-weight: bold;
+		background: $white;
+		padding: 30px 0;
+		p {
+			margin: 0;
+			@include flex-center(center, center, row);
+			a {
+				display: inline-flex;
+				margin-left: 20px;
+				svg {
+					width: 32px;
+				}
+			}
+		}
+	}	
+}

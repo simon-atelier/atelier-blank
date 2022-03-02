@@ -1,0 +1,127 @@
+@import "../../../assets/styles/scss/settings";
+@import "../../../assets/styles/scss/mixins";
+
+.acf-block-preview .image-gallery { 
+	.gallery { 
+		@include flex-center(center, center, row);
+		a {
+			display: block;
+			min-width:200px;
+		}
+		&-item {
+			margin: 0 25px;
+			position: relative;
+			&-image {
+				.color_filter {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.no-js .image-gallery {
+	display: none;
+}
+
+.image-gallery {
+	margin-top: $block-margin-top;
+	margin-bottom: $block-margin-bottom;
+	position: relative;
+	.gallery_slider-controls {
+		display: none;
+	}
+	.gallery {
+		&-item {
+			margin: 0 25px;
+			position: relative;
+			overflow: hidden;
+			&-image {
+				.color_filter {
+					display: none;
+				}
+				position: relative;
+				padding-bottom: 100%;
+				img {
+					@include object-fit;	
+				}
+			}
+			&-description {
+				position: absolute;
+				z-index: 20;
+				bottom: -400px;
+				padding: 20px;
+				background: rgba($primary-color, 80%);
+				text-align: center;
+				transition: bottom 0.3s;
+				width: 100%;
+				p {
+					font-size: 1.25rem;
+					color: $white;
+					margin: 0;
+				}
+			}
+			&:hover {
+				.gallery-item-description {
+					bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint(large up) {
+	.image-gallery {
+		margin-top: $block-margin-top-large;
+		margin-bottom: $block-margin-bottom-large;
+		.gallery {
+			&-item {
+				.color_filter {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					background: $primary-color;
+					background: rgba($primary-color, 0.7);
+					z-index: 100;
+					display: block;
+				}
+				&.slick-active {
+					.color_filter {
+						display: none;
+					}
+				}
+			}
+		}
+		.gallery_slider-controls {
+			position: absolute;
+			top: 50%;
+			z-index: 10;
+			width: 100%;
+			display: block;
+			.gal-prev {
+				left: 20px;
+			}
+			.gal-next {
+				right: 20px;
+			}
+			.gal-prev, .gal-next{
+				position: absolute;
+				z-index: 20;
+				svg {
+					height: 50px;
+					cursor: pointer;
+					path {
+						transition: opacity 0.3s;
+						fill: $white;
+						opacity: 0.8;
+					}
+					&:hover {
+						path {
+							opacity: 0.5;
+						}
+					}
+				}
+			}
+		}
+	}
+}

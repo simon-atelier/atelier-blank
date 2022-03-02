@@ -1,0 +1,180 @@
+/******************************************************************
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants.
+
+******************************************************************/
+
+  
+/*********************
+COLORS
+*********************/
+
+
+
+/*********************
+CSS3 GRADIENTS.
+*********************/
+
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
+  background-color: $to;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+  background-image: -webkit-linear-gradient(top, $from, $to);
+  background-image: -moz-linear-gradient(top, $from, $to);
+  background-image: -o-linear-gradient(top, $from, $to);
+  background-image: linear-gradient(to bottom, $from, $to);
+}
+
+/*********************
+ANIMATION MIXIN 
+*********************/
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} { @content; }
+    @-moz-keyframes #{$animation-name} { @content; }  
+    @-ms-keyframes #{$animation-name} { @content; }
+    @-o-keyframes #{$animation-name} { @content; }  
+    @keyframes #{$animation-name} { @content; }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+
+/*********************
+TRANSITIONS 
+*********************/
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/*********************
+OPACITY
+*********************/
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/******************************************************************
+  - MIXINS -
+******************************************************************/
+@mixin flex-center($justify, $align, $direction){
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; 
+  display: flex;
+  -webkit-box-align: $align;
+  -moz-box-align: $align;
+  -ms-flex-align: $align;
+  -webkit-align-items: $align;
+  align-items: $align;
+  -webkit-justify-content: $justify;
+  justify-content: $justify;
+  -moz-flex-direction: $direction;
+  -webkit-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin object-fit( $x: 50%, $y: 50% ) {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: $x $y;
+    font-family: 'object-fit';
+}
+
+
+@mixin rounded($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
+  border-top-left-radius: $topleft;
+  border-top-right-radius: $topright;
+  border-bottom-right-radius: $bottomright;
+  border-bottom-left-radius: $bottomleft;
+  -webkit-border-top-left-radius: $topleft;
+  -webkit-border-top-right-radius: $topright;
+  -webkit-border-bottom-right-radius: $bottomright;
+  -webkit-border-bottom-left-radius: $bottomleft;
+  -moz-border-radius-topleft: $topleft;
+  -moz-border-radius-topright: $topright;
+  -moz-border-radius-bottomright: $bottomright;
+  -moz-border-radius-bottomleft: $bottomleft;
+}
+
+@mixin backg($img-uri) {
+    background: url($img-uri) no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@mixin cover() {
+    background-position:center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@mixin vertical-align($position) {
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+                position: $position;
+                 top: 50%;
+}
+
+
+
+@mixin shadow($shad) {
+  -webkit-box-shadow: $shad;
+     -moz-box-shadow: $shad;
+      -ms-box-shadow: $shad;
+          box-shadow: $shad;
+}
+
+@mixin transform($trans) {
+      -ms-transform: $trans;
+       -o-transform: $trans;
+          transform: $trans;
+  -webkit-transform: $trans;
+}
+
+@mixin transform-style($trans) {
+     -moz-transform-style: $trans;
+    -ms-transform-style: $trans;
+     -o-transform-style: $trans;
+      transform-style: $trans;
+  -webkit-transform-style: $trans;
+}
+
+@mixin fullback() {
+  background-size:cover;
+  background-position:center;
+}

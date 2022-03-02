@@ -1,0 +1,80 @@
+@import "../../../assets/styles/scss/settings";
+@import "../../../assets/styles/scss/mixins";
+
+.contact-form {
+	margin-top: $block-margin-top;
+	margin-bottom: $block-margin-bottom;
+	.contact_form-title {
+		p {
+			margin-bottom: 50px;
+		}
+	}
+	.contact_form {
+		.wpforms-field-container {
+			padding:30px;
+			input, textarea {
+				margin-bottom: 20px;
+				height: 60px;
+				outline: none;
+				box-shadow: none;
+				border: none;
+				border-radius: 3px;
+				font-size: 1.25rem;
+				width: 100%;
+			}
+			textarea {
+				height: 180px;
+				resize: none;
+			}
+			label {
+				
+			}
+		}
+		.wpforms-field-description {
+			margin-top: 20px;
+		}
+		
+		.input_field:focus ~ .input_label,
+		.input_field:not(:placeholder-shown) ~ .input_label{
+		  z-index: -1;
+		}
+		.wpforms-submit-container {
+			text-align: center;
+			button.wpforms-submit {
+			    margin-top: 20px;
+			    &:hover {
+			    }
+			}
+		}
+	}
+	.wpforms-container {
+		input.wpforms-field-medium, select.wpforms-field-medium, .wpforms-field-row.wpforms-field-medium{
+			max-width: none;
+		}
+	}
+}
+	
+@include breakpoint(medium up) {
+	.contact-form {
+		.contact_form {
+			&-inner {
+				padding:50px;
+			}
+			input, textarea {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+@include breakpoint(large up) {
+	.contact-form {
+		margin-top: $block-margin-top-large;
+		margin-bottom: $block-margin-bottom-large;
+		.contact_form {
+			.wpforms-field-description {
+				
+			}
+		}
+	}
+}

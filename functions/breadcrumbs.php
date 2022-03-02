@@ -1,0 +1,24 @@
+<?php
+function atelier_show_breadcrumbs() {
+    echo '<div class="breadcrumbs-container">';
+        echo '<div class="breadcrumbs">';
+            echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
+            if (is_category() || is_single()) {
+                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+                the_category(' &bull; ');
+                    if (is_single()) {
+                        echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+                        the_title();
+                    }
+            } elseif (is_page()) {
+                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+                echo the_title();
+            } elseif (is_search()) {
+                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+                echo '"<em>';
+                echo the_search_query();
+                echo '</em>"';
+            }
+        echo '</div>';
+    echo '</div>';
+}

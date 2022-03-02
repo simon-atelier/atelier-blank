@@ -1,0 +1,10 @@
+@import "../../../assets/styles/scss/settings";
+@import "../../../assets/styles/scss/mixins";
+
+.acf-block-preview .content-container { 
+	padding: 1rem;
+}
+
+.content-container {
+	margin-bottom: $block-margin-bottom;
+}

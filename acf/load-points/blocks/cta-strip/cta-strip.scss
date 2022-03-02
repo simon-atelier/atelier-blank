@@ -1,0 +1,54 @@
+@import "../../../assets/styles/scss/settings";
+@import "../../../assets/styles/scss/mixins";
+
+.cta-strip {
+	margin-top: $block-margin-top;
+	margin-bottom: $block-margin-bottom;
+	
+	.cta_strip {
+		@include flex-center(flex-start, flex-start, column);
+		background: $primary-color;
+		padding: 40px 50px;
+		width: 100%;
+		min-width: 300px;
+		h3 {
+			color: $white;
+		}
+		p {
+			margin: 0;
+			color: $white;
+		}
+		&-text {
+
+		}
+		&-controls {
+			margin-left: 0;
+			margin-top: 20px;
+			.button {
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+@include breakpoint(large up) {
+	.cta-strip {
+		margin-top: $block-margin-top-large;
+		margin-bottom: $block-margin-bottom-large;
+		.cta_strip {
+			@include flex-center(space-between, center, row);
+			&-controls {
+				margin-left: 40px;
+				margin-top: 0;
+				.button {
+					font-size: 2.625rem;
+					min-width: 275px;
+				}
+			}
+			p {
+				font-size: 1.25rem;
+			}
+		}
+	}
+}
+

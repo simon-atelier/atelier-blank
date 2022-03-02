@@ -1,0 +1,47 @@
+{
+  "name": "atelier-blank",
+  "version": "1.0.0",
+  "description": "Atelier blank theme",
+  "author": "Simon Jacks",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "browser-sync": "^2.27.7",
+    "foundation-sites": "^6.7.4",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-exec": "^5.0.0",
+    "gulp-filter": "^7.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-plumber": "^1.2.1",
+    "gulp-prompt": "^1.2.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-touch-cmd": "^0.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "jshint-stylish": "^2.2.1",
+    "sass": "^1.47.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 9",
+    "ios >= 7"
+  ],
+  "scripts": {
+    "postinstall": "npm run build",
+    "build": "gulp",
+    "scripts": "gulp scripts",
+    "styles": "gulp styles",
+    "images": "gulp images",
+    "watch": "gulp watch",
+    "browsersync": "gulp browsersync",
+    "update-foundation": "npm install foundation-sites"
+  }
+}
