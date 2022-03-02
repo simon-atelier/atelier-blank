@@ -1,7 +1,7 @@
 <?php
 
 function atelier_custom_post_types() {
-	if(get_field('enable_testimonials', 'options')) {
+	if(function_exists('get_field') && get_field('enable_testimonials', 'options')) {
 		register_post_type( 'testimonials',
 			array(
 				'labels' => array(

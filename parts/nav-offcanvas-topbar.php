@@ -25,7 +25,7 @@
 		<?php atelier_top_nav(); ?>	
 	</div>
 
-	<?php if (get_field('enable_search_bar', 'options')): ?>
+	<?php if (function_exists('get_field') && get_field('enable_search_bar', 'options')): ?>
 		<div class="top-bar-right">
 			<?php get_template_part( 'parts/content', 'searchbar' ); ?>
 		</div>
