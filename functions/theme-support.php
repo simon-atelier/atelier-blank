@@ -55,12 +55,18 @@ function atelier_theme_support() {
 
 	// Gutenburg support to include stylesheet with blocks
 	add_theme_support( 'editor-styles' );
-	add_editor_style( 'assets/styles/editor-styles.css' );
 	
 }
 
 add_action( 'after_setup_theme', 'atelier_theme_support' );
 
+// Register editor styles for Gutenberg
+function atelier_gutenberg_editor_css() {
+	$editor_css = '/assets/styles/editor-styles.css';
+	$version = filemtime(get_stylesheet_directory() . $editor_css);
+	wp_enqueue_style('editor-css', get_stylesheet_directory_uri() . $editor_css, [], $version);
+}
+add_action('enqueue_block_editor_assets', 'atelier_gutenberg_editor_css');
 
 
 // Register new category for Gutenburg
