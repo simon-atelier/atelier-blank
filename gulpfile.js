@@ -20,7 +20,6 @@ gulp.task('block', function(cb) {
 	})
 })
 
-
 // Select Foundation components, remove components project will not use
 const FOUNDATION = 'node_modules/foundation-sites';
 const SOURCE = {
@@ -116,12 +115,18 @@ gulp.task('scripts', function() {
 // Compile Sass, Autoprefix and minify
 gulp.task('styles', function() {
 	return gulp.src(SOURCE.styles)
+    	.pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
+    	.pipe(gulp.dest(ASSETS.styles));
+});
+
+gulp.task('styles-full', function() {
+	return gulp.src(SOURCE.styles)
 		.pipe(plugin.plumber(function(error) {
             gutil.log(gutil.colors.red(error.message));
             this.emit('end');
         }))
 		.pipe(plugin.sourcemaps.init())
-		.pipe(sass())
+		.pipe(sass.sync())
 		.pipe(plugin.autoprefixer())
 		.pipe(plugin.cssnano({safe: true, minifyFontValues: {removeQuotes: false}}))
 		.pipe(plugin.sourcemaps.write('.'))
@@ -139,7 +144,7 @@ gulp.task('acf', function() {
             this.emit('end');
         }))
 		.pipe(plugin.sourcemaps.init())
-		.pipe(sass())
+		.pipe(sass.sync())
 		.pipe(plugin.autoprefixer())
 		.pipe(plugin.cssnano({safe: true, minifyFontValues: {removeQuotes: false}}))
 		.pipe(plugin.sourcemaps.write('.'))
@@ -202,4 +207,4 @@ gulp.task('watch', function() {
 });
 
 // Run styles, scripts and foundation-js
-gulp.task('default', gulp.parallel('styles', 'scripts', 'images', 'acf'));
+gulp.task('default', gulp.parallel('styles', 'scripts', 'images', 'acf', 'styles-full'));

@@ -37,6 +37,7 @@ Compiles and minifies all scripts and styles.
 * `$ npm run styles` - to compile all SCSS files in the `assets/styles/scss` directory.
 * `$ npm run scripts` - to compile all JS files in the `assets/scripts/js` directory.
 * `$ npm run images` - to optimize all image files in the `assets/images` directory.
+* `$ npm run styles-full` - to compile all SCSS files in the `assets/styles/scss` directory and map. This process is slower so only run when needed.
 
 ## File Structure 
 
