@@ -1,16 +1,39 @@
-const gulp = require('gulp')
-const { series, parallel } = require('gulp')
-const dartSass = require('sass')
-const gulpSass = require('gulp-sass')
-const sass = gulpSass(dartSass)
-const exec = require('child_process').exec
-const prompt = require('gulp-prompt')
-const gutil = require('gulp-util')
-const filter = require('gulp-filter')
-const touch = require('gulp-touch-cmd')
-const plugin = require('gulp-load-plugins')()
-const browserSync = require('browser-sync').create()
-const babel = require('gulp-babel')
+const gulp = require('gulp'),
+	 { series, parallel } = require('gulp'),
+	 dartSass = require('sass'),
+	 gulpSass = require('gulp-sass'),
+	 sass = gulpSass(dartSass),
+	 exec = require('child_process').exec,
+	 prompt = require('gulp-prompt'),
+	 gutil = require('gulp-util'),
+	 filter = require('gulp-filter'),
+	 touch = require('gulp-touch-cmd'),
+	 plugin = require('gulp-load-plugins')(),
+	 browserSync = require('browser-sync').create(),
+	 babel = require('gulp-babel'),
+	 ftp = require( 'vinyl-ftp' );
+
+gulp.task( 'deploy', function () {
+    var conn = ftp.create( {
+        host:     '62.182.22.158',
+        user:     'simonjac',
+        password: 'Cfthn!03*',
+        parallel: 10,
+        log:      gutil.log
+    } );
+ 
+    var globs = [
+        '**',
+        '!node_modules/**',
+        '!acf-json/**',
+        '!block.sh'
+    ];
+ 
+    return gulp.src( globs, { base: '.', buffer: false } )
+        .pipe( conn.newer( '/atel.simon-jacks.co.uk/wp-content/themes/atelier-blank' ) ) // only upload newer files
+        .pipe( conn.dest( '/atel.simon-jacks.co.uk/wp-content/themes/atelier-blank' ) );
+ 
+} );
 
 gulp.task('block', function(cb) {
   	exec("sh block.sh", function (err, stdout, stderr) {
@@ -207,4 +230,4 @@ gulp.task('watch', function() {
 });
 
 // Run styles, scripts and foundation-js
-gulp.task('default', gulp.parallel('styles', 'scripts', 'images', 'acf', 'styles-full'));
+gulp.task('default', gulp.parallel('styles', 'scripts', 'images', 'acf', 'styles-full', 'deploy'));

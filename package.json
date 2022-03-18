@@ -27,7 +27,8 @@
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
     "jshint-stylish": "^2.2.1",
-    "sass": "^1.47.0"
+    "sass": "^1.47.0",
+    "vinyl-ftp": "^0.6.1"
   },
   "browserslist": [
     "last 2 versions",
