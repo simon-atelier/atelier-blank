@@ -10,7 +10,7 @@ const filter = require('gulp-filter')
 const touch = require('gulp-touch-cmd')
 const plugin = require('gulp-load-plugins')()
 const browserSync = require('browser-sync').create()
-const babel = require('gulp-babel');
+const babel = require('gulp-babel')
 
 gulp.task('block', function(cb) {
   	exec("sh block.sh", function (err, stdout, stderr) {
