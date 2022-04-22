@@ -1,6 +1,6 @@
 <?php
 function block_append($block_name) {
-	$filename = ABSPATH . 'wp-content/themes/atelier-blank/acf/acf_blocks.php';
+	$filename = get_template_directory() . '/acf/acf_blocks.php';
 	$append_content = "
 			acf_register_block_type( build_acf_block( 
 	            '" . $block_name . "',
@@ -108,7 +108,7 @@ function flexi_admin_page_contents() {
 					];
 					$dir_fix = getcwd();
 					$dir_fix = str_replace("wp-admin", "", $dir_fix);
-					$dirs = scandir($dir_fix . 'wp-content/themes/atelier-blank/acf/blocks');
+					$dirs = scandir(get_template_directory() . '/acf/blocks');
 					$i = 1;
 					foreach ($import_options as $key => $import_option) {
 						$disabled = in_array($key, $dirs) ? ' disabled' : "" ;
@@ -192,7 +192,7 @@ function flexi_import_update() {
 	foreach ($import_keys as $import_key) {
 		flexi_default_acf_fields($import_key);
 		block_append($import_key);	
-		rename($dir_fix . "wp-content/themes/atelier-blank/acf/load-points/blocks/" . $import_key, $dir_fix . "wp-content/themes/atelier-blank/acf/blocks/" . $import_key);
+		rename(get_template_directory() . "/acf/load-points/blocks/" . $import_key, get_template_directory() . "/acf/blocks/" . $import_key);
 	}
 	exit('Fields imported');
 }
