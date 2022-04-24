@@ -16,20 +16,20 @@ mkdir -p "$current_path/acf/blocks/$strval"
 cd "$current_path/acf/blocks/$strval"
 
 # Write out new block.php file if file doesn't already exist
-if [ -f "$strval.php" ];
+if [ -f "$strval-block.php" ];
 then
    exit 1
 else
    echo "<?php
 if ( ! defined( 'ABSPATH' ) ) exit; 
 
-\$id = '$strval-' . $block['id'];
-if( !empty($block['anchor']) ) {
-    \$id = $block['anchor'];
+\$id = '$strval-' . \$block['id'];
+if( !empty(\$block['anchor']) ) {
+    \$id = \$block['anchor'];
 }
 
 \$className = '$strval';
-if( !empty($block['className']) ) {
+if( !empty(\$block['className']) ) {
     \$className .= ' ' . \$block['className'];
 }
 if( !empty(\$block['align']) ) {
@@ -41,7 +41,7 @@ if( !empty(\$block['align']) ) {
 ?>
 
 <section id='<?php echo esc_attr(\$id); ?>' class='<?php echo esc_attr(\$className); ?>'>
-	  <?= \$fields['field'] ?>
+    <?= \$fields['field'] ?>
 </section>
 " > "$strval.php"
 fi
@@ -55,7 +55,7 @@ else
 @import \"../../../assets/styles/scss/mixins\";
 
 .$strval {
-	
+  
 }
 " > "$strval.scss"
 fi
