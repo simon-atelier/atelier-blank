@@ -43,7 +43,7 @@ if( !empty(\$block['align']) ) {
 <section id='<?php echo esc_attr(\$id); ?>' class='<?php echo esc_attr(\$className); ?>'>
     <?= \$fields['field'] ?>
 </section>
-" > "$strval.php"
+" > "$strval-block.php"
 fi
 
 # Write out new sass file if file doesn't already exist
