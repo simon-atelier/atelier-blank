@@ -9,8 +9,8 @@ function atelier_show_breadcrumbs() {
     $link_attr        = ' rel="v:url" property="v:title"';
     $link             = $link_before . '<a' . $link_attr . ' href="%1$s">%2$s</a>' . $link_after;
     $delimiter        = ' &raquo; ';              // Delimiter between crumbs
-    $before           = '<span class="current">'; // Tag before the current crumb
-    $after            = '</span>';                // Tag after the current crumb
+    $before           = '<li><span class="current">'; // Tag before the current crumb
+    $after            = '</span></li>';                // Tag after the current crumb
     $page_addon       = '';                       // Adds the page number if the query is paged
     $breadcrumb_trail = '';
     $category_links   = '';
@@ -184,22 +184,22 @@ function atelier_show_breadcrumbs() {
     }
 
     $breadcrumb_output_link  = '';
-    $breadcrumb_output_link .= '<div class="breadcrumbs-container"><div class="breadcrumbs">';
+    $breadcrumb_output_link .= '<div class="breadcrumbs-container"><ul class="breadcrumbs">';
     if (is_home() || is_front_page() ) {
         // Do not show breadcrumbs on page one of home and frontpage
         if ( is_paged() ) {
             // $breadcrumb_output_link .= $here_text . $delimiter;
-            $breadcrumb_output_link .= '<a href="' . $home_link . '">' . $home_text . '</a>';
+            $breadcrumb_output_link .= '<li><a href="' . $home_link . '">' . $home_text . '</a></li>';
             $breadcrumb_output_link .= $page_addon;
         }
     } else {
         // $breadcrumb_output_link .= $here_text . $delimiter;
-        $breadcrumb_output_link .= '<a href="' . $home_link . '" rel="v:url" property="v:title">' . $home_text . '</a>';
-        $breadcrumb_output_link .= $delimiter;
+        $breadcrumb_output_link .= '<li><a href="' . $home_link . '" rel="v:url" property="v:title">' . $home_text . '</a></li>';
+        // $breadcrumb_output_link .= $delimiter;
         $breadcrumb_output_link .= $breadcrumb_trail;
         $breadcrumb_output_link .= $page_addon;
     }
-    $breadcrumb_output_link .= '</div></div><!-- .breadcrumbs -->';
+    $breadcrumb_output_link .= '</ul></div><!-- .breadcrumbs -->';
 
     echo $breadcrumb_output_link;
 }
