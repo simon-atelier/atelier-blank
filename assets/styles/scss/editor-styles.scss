@@ -14,10 +14,11 @@
 .wp-block.is-selected {
     background-color: #e0e0e0;
 }
-
-.acf-block-preview {
-	pointer-events:none;
-	.swiper {
-		display: none;
-	}	
+.wp-block:not(.wp-block-acf-content-container) {
+	.acf-block-preview {
+		pointer-events:none;
+		.swiper {
+			display: none;
+		}	
+	}
 }
