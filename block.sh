@@ -28,7 +28,7 @@ if( !empty(\$block['anchor']) ) {
     \$id = \$block['anchor'];
 }
 
-\$className = '$strval';
+\$className = '$strval custom-block';
 if( !empty(\$block['className']) ) {
     \$className .= ' ' . \$block['className'];
 }
