@@ -6,7 +6,7 @@ function flex_acf_init_block_types() {
             'name' => 'content-container',
             'title' => __('Content container'),
             'description' => __('Wraps content in a styled container.'), 
-            'category' => 'create-blocks',
+            'category' => 'flexi-blocks',
             'icon' => 'welcome-widgets-menus',
             'keywords' => [ 'container', 'content', 'box' ],
             'supports' => [
