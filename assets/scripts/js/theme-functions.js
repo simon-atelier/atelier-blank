@@ -12,7 +12,7 @@
     
 
 
-    // Cookie banner functions
+    // Cookie functions
     function setCookie(name,value,days) {
         var expires = "";
         if (days) {
@@ -38,25 +38,6 @@
         document.cookie = name+"=; Max-Age=-99999999;";  
     }
 
-    if(getCookie("atCookieConsent") != "on") {
-        setTimeout(function(){
-            $(".cookie_consent_container").addClass("active");
-        }, 1000);
-    }
-
-    $(".cookieConsent").on("click", function(){
-        setCookie("atCookieConsent","on",30);
-        $(".cookie_consent_container").removeClass("active");
-        setTimeout(function(){
-            $(".cookie_consent_container").remove();
-        }, 1000);
-    });
-
-    if(getCookie("atCookieConsent") == "on") {
-        setTimeout(function(){
-            $(".cookie_consent_container").remove();
-        }, 1000);
-    }
 
 
 

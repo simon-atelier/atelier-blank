@@ -33,11 +33,6 @@ require_once(get_template_directory().'/functions/breadcrumbs.php');
 // Use this as a template for custom post types
 require_once(get_template_directory().'/functions/custom-post-type.php');
 
-// Add cookie banner // Will replace with plugin soon
-function load_cookie_banner() {
-	if(get_field('enable_cookie_banner', 'options')) require_once(get_template_directory().'/functions/cookie-banner.php');
-}
-add_action('acf/init', 'load_cookie_banner');
 
 // Use AJAX functions
 // require_once(get_template_directory().'/functions/ajax.php'); 
