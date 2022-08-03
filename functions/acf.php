@@ -104,7 +104,8 @@ function flexi_admin_page_contents() {
 						"social-share" => "Social share",
 						"text-image" => "Half text/ Half image",
 						"related-posts" => "Related posts",
-						"accordion" => "Accordion"
+						"accordion" => "Accordion",
+						"content-panel" => "Content panels"
 					];
 					$dir_fix = getcwd();
 					$dir_fix = str_replace("wp-admin", "", $dir_fix);

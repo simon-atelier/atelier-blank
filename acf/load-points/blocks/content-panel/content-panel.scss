@@ -1,0 +1,125 @@
+@import "../../../assets/styles/scss/settings";
+@import "../../../assets/styles/scss/mixins";
+
+.content-panel {
+	padding: 0rem 0 3rem;
+	padding-top: 0;
+	&_top {
+		margin-bottom: 3rem;
+	}
+	&_title {
+		text-align: center;
+		h2 {
+			margin-top: 3rem;
+			margin-bottom: 0;
+		}
+	}
+	&_container {
+		margin-bottom: 3rem;
+		&.even {
+			height: calc(100% - 3rem);
+			.content-panel_container-media {
+				height: 314px;
+				position: relative;
+				img, video {
+					height: 100%;
+					width: 100%;
+					@include object-fit;
+				}
+				&:empty {
+					height: 0 !important;
+				}
+			}
+		}
+		&-media {
+			margin-bottom: 2rem;
+			overflow: hidden;
+			position: relative;
+			video, img {
+				width: 100%;
+				transition: transform 0.3s;
+			}
+			&:after {
+				content: " ";
+			    display: block;
+			    position: absolute;
+			    height: 100%;
+			    top: 0;
+			    left: 0;
+			    right: 0;
+			    background: rgba(0, 0, 0, 0);
+			    transition: all .3s ease-in-out;
+			}
+			&:hover {
+				&:after { 
+					background: rgba(0, 0, 0, .2);
+				}
+				img {
+					transform: scale(1.05);
+				}
+			}
+			&:empty {
+				height: 0;
+			}
+		}
+		&-content {
+			h4 {
+				margin-bottom: 2rem;
+				a {
+					color: $black;
+				}
+			}
+			&_controls {
+				margin-top: 0.875rem;
+				margin-bottom: 0;
+				p {
+					a {
+						&.arrowlink {
+							font-weight: bold;
+							@include flex-center(flex-start, center, row);
+							svg {
+								margin-right: 10px;
+							}
+						}
+					}
+				}
+				&:empty {
+					margin: 0;
+				}
+			}
+		}
+	}
+	&.bordered {
+		.content-panel_container {
+			background: $white;
+			border-top: 1px solid $light-gray;
+			box-shadow: 0 2px 3px 0px rgba(0,0,0,15%);
+			&-media {
+				margin-bottom: 0;
+			}
+			&-content { 
+				padding: 2rem;
+				&_controls { 
+					margin: 1.5rem 0 0;
+					p, .button {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint(medium up) {
+	.content-panel {
+		padding: $medium-padding 0;	
+		padding-top: calc($medium-padding - 30px);
+		&_title {
+			text-align: center;
+			h2 {
+				margin-top: 0;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
