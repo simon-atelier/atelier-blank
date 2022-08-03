@@ -15,7 +15,7 @@ function flex_acf_init_block_types() {
                 'jsx' => true
             ],
             'render_template' => get_template_directory() . '/acf/blocks/content-container/content-container-block.php',
-            'enqueue_style'     => get_template_directory_uri() . '/acf/blocks/content-container/content-container.css'
+            'enqueue_style'   => get_template_directory_uri() . '/acf/blocks/content-container/content-container.css'
         ));
    
     } 

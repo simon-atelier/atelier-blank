@@ -289,6 +289,59 @@ function add_acf_options_fields() {
 			'description' => '',
 			'show_in_rest' => 0,
 		));
+
+		acf_add_local_field_group(array(
+			'key' => 'group_6278429424c3d',
+			'title' => '[Block] Content Container',
+			'fields' => array(
+				array(
+					'key' => 'field_6278429c88c04',
+					'label' => 'Container width',
+					'name' => 'cc_container_width',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'small' => 'Small',
+						'medium' => 'Medium',
+						'large' => 'Large',
+						'fullwidth' => 'Full Width',
+					),
+					'default_value' => 'small',
+					'allow_null' => 0,
+					'multiple' => 0,
+					'ui' => 0,
+					'return_format' => 'value',
+					'ajax' => 0,
+					'placeholder' => '',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'block',
+						'operator' => '==',
+						'value' => 'acf/content-container',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+			'show_in_rest' => 0,
+		));
+
 	endif;	
 }
 add_action('acf/init', 'add_acf_options_fields');

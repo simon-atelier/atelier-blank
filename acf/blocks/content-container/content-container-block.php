@@ -14,15 +14,23 @@ if( !empty($block['align']) ) {
 }
 
 
-$container_size = get_field('container_size');
+$container_size = get_field('cc_container_width8');
 
 ?>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-	<?php if ( $container_size == "full" ): ?>
-	<div class="full-width">
-	<?php else: ?>	
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?= $bg_colour ?>>
+	<?php if ( $container_size == "small" ): ?>
+	<div class="small-container">
+	<?php elseif($container_size == "medium"): ?>
+	<div class="medium-container">
+	<?php elseif($container_size == "large"): ?>
 	<div class="grid-container">
+	<?php elseif($container_size == "fullwidth"): ?>
+	<div class="full-container">
 	<?php endif; ?>
-    	<InnerBlocks />
+		<div class="grid-x grid-margin-x">
+			<div class="large-12 cell">
+				<InnerBlocks />		
+			</div>
+		</div>
     </div>
 </section>
