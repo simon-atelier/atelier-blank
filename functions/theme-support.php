@@ -56,6 +56,25 @@ function atelier_theme_support() {
 	// Gutenburg support to include stylesheet with blocks
 	add_theme_support( 'editor-styles' );
 	
+	/* 
+	Remove custom colours and define palette
+	add_theme_support('disable-custom-colors');
+	add_theme_support(
+	    'editor-color-palette',
+	    array(
+	        array(
+	            'name'  => esc_html__( 'Black', 'atelier' ),
+	            'slug'  => 'black',
+	            'color' => "#000",
+	        ),
+	        array(
+	            'name'  => esc_html__( 'Black', 'atelier' ),
+	            'slug'  => 'white',
+	            'color' => "#fff",
+	        ),
+	    )
+	);
+	*/
 }
 
 add_action( 'after_setup_theme', 'atelier_theme_support' );
