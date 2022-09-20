@@ -60,3 +60,21 @@ Display breadcrumbs in any template by using the function - atelier_show_breadcr
 
 ### Build block with bash
 * `sh block.sh` - Run this on the command line to create a new block, prompt will ask for a block name, this must be kebab-case if multiple words. This will build out PHP, JS, and SCSS files (Trying to chnage to gulp process)
+
+
+### Useful mixins and function
+Useful breakpoint functions using @include breakpoint(SIZE DIRECTION)
+Breakpoints are set in settings.scss
+
+Examples
+@include breakpoint(small only) {
+	// Only use css for small breakpoint
+}
+@include breakpoint(medium up) {
+	// Only use css for medium breakpoint and higher
+}
+@include breakpoint(large down) {
+	// Only use css for large breakpoint and lower		
+}
+
+* rem-calc(pixels) is a useful Foundation sass function for generating rem values - Just replace PIXELS with the value you wish to convert in pixels, e.g. rem-calc(20) will generate 1.25rem (if a rem base of 16px is set)
