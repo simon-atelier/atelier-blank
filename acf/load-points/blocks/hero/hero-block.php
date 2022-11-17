@@ -27,7 +27,7 @@ if( !empty($block['align']) ) {
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     
-    <div class="hero">
+    <div class="hero-container">
         <?php $x=1; if( have_rows('hero_slides') ): while ( have_rows('hero_slides') ) : the_row(); ?>
             <div class="hero-slide">
                 <?php $fields = get_sub_field('home_hero_fields'); ?>
@@ -37,13 +37,13 @@ if( !empty($block['align']) ) {
                 </div>
                 <div class="hero-content">
                     <?php if($x == 1) : // Ensure only one H1 tag is output, style by class ?>
-                        <h1 class="hero-content_title"><?= $fields['title']; ?></h1>
+                        <h1 class="hero-content-title"><?= $fields['title']; ?></h1>
                     <?php else : ?>
-                        <p class="hero-content_title"><?= $fields['title']; ?></p>
+                        <p class="hero-content-title"><?= $fields['title']; ?></p>
                     <?php endif; ?>
-                    <p class="hero-content_subtitle"><?= $fields['subtitle']; ?></p>
+                    <p class="hero-content-subtitle"><?= $fields['subtitle']; ?></p>
                     <?php if(!empty($fields['subtitle'])) ?>
-                    <p class="hero-content_controls"><a href="<?= $fields['button_link'] ?>" class="button"><?= $fields['button_title']; ?></a></p>
+                    <p class="hero-content-controls"><a href="<?= $fields['button_link'] ?>" class="button"><?= $fields['button_title']; ?></a></p>
                 </div>
             </div>
         <?php $x++; endwhile; endif; ?>
