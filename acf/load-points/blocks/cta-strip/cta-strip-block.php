@@ -5,7 +5,7 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
-$className = 'cta-strip';
+$className = 'cta-strip custom-block';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }

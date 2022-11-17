@@ -5,7 +5,7 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
-$className = 'button-block';
+$className = 'button-block custom-block';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }

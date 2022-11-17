@@ -7,7 +7,7 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
-$className = 'page-banner';
+$className = 'page-banner custom-block';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }

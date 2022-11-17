@@ -7,7 +7,7 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
-$className = 'image-gallery';
+$className = 'image-gallery custom-block';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }

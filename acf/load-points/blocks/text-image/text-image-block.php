@@ -8,7 +8,7 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
-$className = 'text-image';
+$className = 'text-image custom-block';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }

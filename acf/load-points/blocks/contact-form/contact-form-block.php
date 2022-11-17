@@ -7,7 +7,7 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
-$className = 'contact-form';
+$className = 'contact-form custom-block';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }

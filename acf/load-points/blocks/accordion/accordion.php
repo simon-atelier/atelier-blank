@@ -6,7 +6,7 @@ if( !empty(['anchor']) ) {
     $id = ['anchor'];
 }
 
-$className = 'accordion-block';
+$className = 'accordion-block custom-block';
 if( !empty(['className']) ) {
     $className .= ' ' . $block['className'];
 }

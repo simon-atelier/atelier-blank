@@ -7,7 +7,7 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
-$className = 'related-posts';
+$className = 'related-posts custom-block';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }

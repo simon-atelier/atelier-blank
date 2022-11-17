@@ -5,7 +5,7 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
-$className = 'social-share';
+$className = 'social-share custom-block';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }

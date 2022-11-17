@@ -7,7 +7,7 @@ if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
-$className = 'latest-news';
+$className = 'latest-news custom-block';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }
