@@ -1,8 +1,5 @@
 // Import foundation styles to the Gutenburg editor
 @import "../../../node_modules/foundation-sites/scss/foundation";
-@include foundation-xy-grid-classes;
-@include foundation-accordion;
-@include foundation-typography;
 @import "settings";
 @import "mixins";
 @import "global";
@@ -10,6 +7,9 @@
 .wp-core-ui {
 	.acf-block-preview {
 		@include foundation-button;
+		@include foundation-xy-grid-classes;
+		@include foundation-accordion;
+		@include foundation-typography;
 	}
 }
 
