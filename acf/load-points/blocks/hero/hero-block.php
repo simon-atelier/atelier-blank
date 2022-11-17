@@ -41,8 +41,9 @@ if( !empty($block['align']) ) {
                     <?php else : ?>
                         <p class="hero-content-title"><?= $fields['title']; ?></p>
                     <?php endif; ?>
+                    <?php if(!empty($fields['subtitle'])): ?>
                     <p class="hero-content-subtitle"><?= $fields['subtitle']; ?></p>
-                    <?php if(!empty($fields['subtitle'])) ?>
+                    <?php endif; ?>
                     <p class="hero-content-controls"><a href="<?= $fields['button_link'] ?>" class="button"><?= $fields['button_title']; ?></a></p>
                 </div>
             </div>
