@@ -44,7 +44,7 @@ class Topbar_Menu_Walker extends Walker_Nav_Menu {
 // }
 
 // The Off Canvas Menu - Accordion
-function joints_off_canvas_nav() {
+function atelier_off_canvas_nav() {
 	wp_nav_menu(array(
 		'container'			=> false,							// Remove nav container
 		'menu_id'			=> 'offcanvas-nav',					// Adding custom nav id
