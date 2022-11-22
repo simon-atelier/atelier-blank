@@ -1,11 +1,4 @@
-
-
-
-            
-            	
-
-    
-        [
+[
     {
         "key": "group_611d52287ce3f",
         "title": "Text\/Image block",
@@ -14,6 +7,7 @@
                 "key": "field_611d5239bab52",
                 "label": "Text\/Image fields",
                 "name": "text_image_fields",
+                "aria-label": "",
                 "type": "group",
                 "instructions": "",
                 "required": 0,
@@ -29,6 +23,7 @@
                         "key": "field_611d524dbab53",
                         "label": "Image",
                         "name": "image",
+                        "aria-label": "",
                         "type": "image",
                         "instructions": "",
                         "required": 0,
@@ -61,6 +56,7 @@
                         "key": "field_613626c2cd144",
                         "label": "Video",
                         "name": "video",
+                        "aria-label": "",
                         "type": "file",
                         "instructions": "",
                         "required": 0,
@@ -88,6 +84,7 @@
                         "key": "field_61362697cd143",
                         "label": "Image or Video",
                         "name": "image_or_video",
+                        "aria-label": "",
                         "type": "select",
                         "instructions": "",
                         "required": 0,
@@ -113,6 +110,7 @@
                         "key": "field_611d5263bab54",
                         "label": "Title",
                         "name": "title",
+                        "aria-label": "",
                         "type": "text",
                         "instructions": "",
                         "required": 0,
@@ -132,7 +130,8 @@
                         "key": "field_611d5268bab55",
                         "label": "Body",
                         "name": "body",
-                        "type": "textarea",
+                        "aria-label": "",
+                        "type": "wysiwyg",
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -142,35 +141,17 @@
                             "id": ""
                         },
                         "default_value": "",
-                        "placeholder": "",
-                        "maxlength": "",
-                        "rows": 6,
-                        "new_lines": "br"
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1,
+                        "delay": 0
                     },
                     {
-                        "key": "field_611d532ebab56",
-                        "label": "Button title",
-                        "name": "button_title",
-                        "type": "text",
-                        "instructions": "Optional",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
-                    },
-                    {
-                        "key": "field_611d5338bab57",
-                        "label": "Button link",
-                        "name": "button_link",
-                        "type": "text",
+                        "key": "field_637d2a399c324",
+                        "label": "Button",
+                        "name": "button",
+                        "aria-label": "",
+                        "type": "link",
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -179,16 +160,13 @@
                             "class": "",
                             "id": ""
                         },
-                        "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
+                        "return_format": ""
                     },
                     {
                         "key": "field_611d53d1bab58",
                         "label": "Image position",
                         "name": "image_position",
+                        "aria-label": "",
                         "type": "select",
                         "instructions": "",
                         "required": 0,
@@ -209,30 +187,6 @@
                         "return_format": "value",
                         "ajax": 0,
                         "placeholder": ""
-                    },
-                    {
-                        "key": "field_611d57ada7f09",
-                        "label": "Text background",
-                        "name": "text_background",
-                        "type": "image",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "return_format": "id",
-                        "preview_size": "medium",
-                        "library": "all",
-                        "min_width": "",
-                        "min_height": "",
-                        "min_size": "",
-                        "max_width": "",
-                        "max_height": "",
-                        "max_size": "",
-                        "mime_types": ""
                     }
                 ]
             }
@@ -253,6 +207,7 @@
         "instruction_placement": "label",
         "hide_on_screen": "",
         "active": true,
-        "description": ""
+        "description": "",
+        "show_in_rest": 0
     }
 ]

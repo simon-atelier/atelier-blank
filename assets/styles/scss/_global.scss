@@ -15,12 +15,19 @@ Stylesheet: Global Stylesheet
 .rightext {
 	text-align:right;
 }
+.large-container {
+	max-width: 1620px;
+	width: 100%;
+	margin: 0 auto;
+}
 .small-container {
 	max-width: $small-container;
 	width: 100%;
 	margin: 0 auto;
 }
-
+.button {
+	font-weight: bold;
+}
 
 
 
@@ -28,7 +35,9 @@ Stylesheet: Global Stylesheet
 
 }
 @include breakpoint(large up) {
-
+	.order-1 { order: 1; }
+	.order-2 { order: 2; }
+	.order-3 { order: 3; }
 }
 
 @include breakpoint(xlarge up) {
