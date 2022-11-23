@@ -14,10 +14,10 @@ if( !empty($block['align']) ) {
 }
 
 
-$container_size = get_field('cc_container_width8');
+$container_size = get_field('cc_container_width');
 
 ?>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?= $bg_colour ?>>
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
 	<?php if ( $container_size == "small" ): ?>
 	<div class="small-container">
 	<?php elseif($container_size == "medium"): ?>

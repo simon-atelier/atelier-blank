@@ -12,10 +12,10 @@
 		position: relative;
 		height: 100%;
 		img {
-			@include object-fit;
+			// @include object-fit;
 		}
 		video {
-			@include object-fit;
+			// @include object-fit;
 		}
 	}
 	
@@ -31,15 +31,8 @@
 			}
 		}
 		&-text {
-			padding: 80px 60px;
 			z-index: 2;
 			position: relative;
-			h3, p {
-				color:$white;	
-			}
-			p {
-
-			}
 		}
 	}
 }

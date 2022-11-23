@@ -25,7 +25,7 @@ $fields = get_field('text_image_fields');
         $button = $fields['button'];
     ?>
     <div class="grid-container">
-        <div class="grid-x">
+        <div class="grid-x grid-margin-x align-middle">
             <?php $order = ($fields['image_position'] == "Left") ? "order-1" : "order-3"; ?>
             <div class="large-6 cell<?= $order ?>">
                 <div class="text-image-image">
@@ -44,7 +44,7 @@ $fields = get_field('text_image_fields');
             <div class="large-6 cell order-2">
                 <div class="text-image-content">
                     <div class="text-image-content-text">
-                        <h3><?= $fields['title'] ?></h3>
+                        <h2><?= $fields['title'] ?></h2>
                         <?= $fields['body'] ?>
                         <?php if (!empty($fields['button_title'])): ?>
                             <p class="controls"><a href="<?= $button['url'] ?>" class="button black bottom-left"><?= $button['title'] ?></a></p>

@@ -21,7 +21,7 @@ $background = $fields['background'];
 ?>
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     
-    <div class="page_banner-background">
+    <div class="page-banner-background">
         <?php if ($fields['image_or_video'] == "Video"): ?>
             <?php $video = $fields['video_background'] ?>
             <video autoplay>
@@ -32,10 +32,10 @@ $background = $fields['background'];
             <?php echo wp_get_attachment_image( $background, 'large' ); ?>    
         <?php endif; ?>
     </div>
-    <div class="page_banner-content">
-        <div class="page_banner-content-text">
-            <p class="page_banner-content-title"><?= $fields['title'] ?></p>
-            <p class="page_banner-content-subtitle"><?= $fields['subtitle'] ?></p>
+    <div class="page-banner-content">
+        <div class="page-banner-content-text">
+            <p class="page-banner-content-title"><?= $fields['title'] ?></p>
+            <p class="page-banner-content-subtitle"><?= $fields['subtitle'] ?></p>
         </div>
     </div>
 
