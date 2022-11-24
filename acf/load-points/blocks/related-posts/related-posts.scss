@@ -3,20 +3,11 @@
 
 .related-posts {
 	&-content {
-		background: $secondary-color;
-		padding: 40px;
 		.tag {
 		   	display: inline-block;
-		   	color: $white;
-		    font-size: .7rem;
-		    font-weight: bolder;
-		    text-transform: uppercase;
-		    border-bottom: 2px solid white;
-		    padding-bottom: .2rem;
-		    margin-bottom: .75rem;
 		}
 		p {
-			color: $white;
+
 		}
 	}
 	
@@ -26,7 +17,7 @@
 	&-controls {
 		margin-top: 50px;
 		.button {
-			font-size: 1.825rem;
+
 		}
 	}
 }
@@ -37,7 +28,7 @@
 	.related-posts {
 		&-content {
 			p {
-				font-size: 1.25rem;
+
 			}
 		}
 			
@@ -47,7 +38,7 @@
 		}
 		&-controls {
 			.button {
-				font-size: 2.625rem;
+
 			}
 		}
 	}

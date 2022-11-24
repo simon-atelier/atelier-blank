@@ -1,61 +1,18 @@
 @import "../../../assets/styles/scss/settings";
 @import "../../../assets/styles/scss/mixins";
 
-.related-posts {
-	margin-top: $block-margin-top;
-	margin-bottom: $block-margin-bottom;
-	padding: 0 2.5rem;
-
+.page-banner {
 	&-content {
-		background: $secondary-color;
-		padding: 40px;
-		.tag {
-		   	display: inline-block;
-		   	color: $white;
-		    font-size: .7rem;
-		    font-weight: bolder;
-		    text-transform: uppercase;
-		    border-bottom: 2px solid white;
-		    padding-bottom: .2rem;
-		    margin-bottom: .75rem;
-		}
-		p {
-			color: $white;
-		}
-	}
-	
-	h2 {
-		margin-bottom: 30px;
-	}
-	&-controls {
-		margin-top: 50px;
-		.button {
-			font-size: 1.825rem;
-		}
-	}
-}
-
-	
-
-@include breakpoint(large up) {
-	.related-posts {
-		margin-top: $block-margin-top-large;
-		margin-bottom: $block-margin-bottom-large;
-		&-content {
-			p {
-				font-size: 1.25rem;
-			}
-		}
-			
-		} 
-		h2 {
-			margin-bottom: 50px;
-		}
-		&-controls {
-			.button {
-				font-size: 2.625rem;
-			}
-		}
-	}
 		
+		&-text {
+		   	&-title {
+
+		   	}
+		   	&-subtitle {
+	   			
+	   		}
+		}
+		
+	}
+	
 }
