@@ -1,67 +1,61 @@
 @import "../../../assets/styles/scss/settings";
 @import "../../../assets/styles/scss/mixins";
-.acf-block-preview {
-	.page-banner { 
-		height: 400px;
+
+.related-posts {
+	margin-top: $block-margin-top;
+	margin-bottom: $block-margin-bottom;
+	padding: 0 2.5rem;
+
+	&-content {
+		background: $secondary-color;
+		padding: 40px;
+		.tag {
+		   	display: inline-block;
+		   	color: $white;
+		    font-size: .7rem;
+		    font-weight: bolder;
+		    text-transform: uppercase;
+		    border-bottom: 2px solid white;
+		    padding-bottom: .2rem;
+		    margin-bottom: .75rem;
+		}
+		p {
+			color: $white;
+		}
 	}
-	.breadcrumbs-container {
-		display: none;
+	
+	h2 {
+		margin-bottom: 30px;
+	}
+	&-controls {
+		margin-top: 50px;
+		.button {
+			font-size: 1.825rem;
+		}
 	}
 }
 
-.page-banner {
-	background: #eee;
-	height: 600px;
-	position: relative;
-	&-background {
-		position: relative;
-		height: 100%;
-		width: 100%;
-		z-index: 1;
-		img, video {
-			@include object-fit;
-		}
-	}
-	&-content {
-		position: absolute;
-		z-index: 3;
-		bottom:0;
-		height: 400px;
-		width: 100%;
-		padding: 0 20px 30px;
-		background: rgb(0,0,0);
-		background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-		@include flex-center(space-between, flex-end, row);
-		transition: background 0.3s;
-		&-title {
-			font-family: $header-font-family;
-			font-size: 4.25rem;
-			color: $white;
-			line-height: 1;
-			margin-bottom: 5px;
-			transition: transform 0.3s;
-		}
-		&-subtitle {
-			font-size: 1.5rem;
-			color: $white;
-			transition: transform 0.3s;
-		}
-		
-	}
-	&:hover {
+	
+
+@include breakpoint(large up) {
+	.related-posts {
+		margin-top: $block-margin-top-large;
+		margin-bottom: $block-margin-bottom-large;
 		&-content {
-			background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
-			&-title, &-subtitle { 
-				transform: translateY(-10px);
+			p {
+				font-size: 1.25rem;
+			}
+		}
+			
+		} 
+		h2 {
+			margin-bottom: 50px;
+		}
+		&-controls {
+			.button {
+				font-size: 2.625rem;
 			}
 		}
 	}
-}
-
-@include breakpoint(medium up) {
-	.page-banner {
-		&-content {
-			padding: 0 120px 30px;
-		}
-	}
+		
 }
