@@ -1,23 +1,44 @@
 @import "../../../assets/styles/scss/settings";
 @import "../../../assets/styles/scss/mixins";
+//.related-posts
 
-.related-posts {
-	&-content {
+.post-block {
+	overflow: hidden;
+	border-radius: $global-radius;
+	&-image {
+		height: 328px;
+		position: relative;
+		img {
+			@include object-fit;
+		}
 		.tag {
+			position: absolute;
+			bottom: 0;
+			left: 0;
 		   	display: inline-block;
-		}
-		p {
-
+		   	color: $white;
+		    font-size: 1.25rem;
+		    background: $primary-color;
+		    font-weight: bold;
+		    height: 58px;
+		    border-top-right-radius: $global-radius;
+		    padding: 1rem 1.25rem;
 		}
 	}
-	
-	h2 {
-		margin-bottom: 30px;
-	}
-	&-controls {
-		margin-top: 50px;
-		.button {
-
+	&-content {
+		background: $lorange;
+		padding: 50px;
+		text-align: center;
+		h2 {
+			margin-bottom: 30px;
+			font-size: rem-calc(38);
+			line-height: 1;
+		}
+		&-controls {
+			margin-top: 50px;
+			.button {
+				font-size: 1.825rem;
+			}
 		}
 	}
 }
@@ -25,22 +46,22 @@
 	
 
 @include breakpoint(large up) {
-	.related-posts {
+	.post-block {
 		&-content {
 			p {
-
+				
+			}
+			h2 {
+				
+			}
+			&-controls {
+				.button {
+					
+				}
 			}
 		}
 			
-		} 
-		h2 {
-			margin-bottom: 50px;
-		}
-		&-controls {
-			.button {
-
-			}
-		}
+			
 	}
 		
 }

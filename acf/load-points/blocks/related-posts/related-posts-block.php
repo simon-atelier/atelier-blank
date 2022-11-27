@@ -36,15 +36,15 @@ if (empty($posts)) {
                     $category = get_the_category($post->ID);
                 ?>
                 <div class="large-4 cell">
-                    <div class="related-posts">
-                        <div class="related-posts-image">
+                    <div class="post-block">
+                        <div class="post-block-image">
                             <?php echo wp_get_attachment_image( $image, 'full'); ?>
-                        </div>
-                        <div class="related-posts-content">
                             <span class="tag"><?= $category[0]->name ?></span>
-                            <h3 class="white"><?php echo get_the_title($post->ID); ?></h3>
+                        </div>
+                        <div class="post-block-content">
+                            <h2><?php echo get_the_title($post->ID); ?></h2>
                             <p><?php echo get_the_excerpt($post->ID); ?></p>
-                            <div class="related-posts-content-controls">
+                            <div class="post-block-content-controls">
                                 <a href="<?php echo get_the_permalink($post->ID); ?>" class="button black bottom-left">Read more</a>
                             </div>
                         </div>

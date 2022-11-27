@@ -73,7 +73,7 @@ OPACITY
 /******************************************************************
   - MIXINS -
 ******************************************************************/
-@mixin flex-center($justify, $align, $direction){
+@mixin flex-center($justify, $align, $direction, $wrap: false){
   display: -webkit-box; 
   display: -moz-box;
   display: -ms-flexbox;
@@ -89,6 +89,9 @@ OPACITY
   -moz-flex-direction: $direction;
   -webkit-flex-direction: $direction;
   flex-direction: $direction;
+  @if $wrap {
+    flex-wrap: wrap;
+  }
 }
 
 @mixin object-fit( $x: 50%, $y: 50% ) {
