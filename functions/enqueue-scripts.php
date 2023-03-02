@@ -4,10 +4,12 @@ function site_scripts() {
         
     // Adding scripts file in the footer
     wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array( 'jquery' ), filemtime(get_template_directory() . '/assets/scripts/js'), true );
-    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/assets/scripts/slick.min.js', array( 'jquery' ), filemtime(get_template_directory() . '/assets/scripts/js'), true );
-   
-    // Register main stylesheet
     wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/styles/style.css', array(), filemtime(get_template_directory() . '/assets/styles/scss'), 'all' );
+   
+    wp_enqueue_script( 'lozad-js', 'https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js', array(), filemtime(get_template_directory() . '/assets/scripts/js'), true );
+    
+
+    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/assets/scripts/slick.min.js', array( 'jquery' ), filemtime(get_template_directory() . '/assets/scripts/js'), true );
     wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/assets/styles/slick.css', array(), filemtime(get_template_directory() . '/assets/styles/scss'), 'all' );
 
     // Comment reply script for threaded comments
