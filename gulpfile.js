@@ -15,9 +15,9 @@ const gulp = require('gulp'),
 
 gulp.task( 'deploy', function () {
     var conn = ftp.create( {
-        host:     '62.182.22.158',
-        user:     'simonjac',
-        password: 'Cfthn!03*',
+        host:     'ADD HOST HERE',
+        user:     'ADD USERNAME HERE',
+        password: 'ADD PASSWORD HERE',
         parallel: 10,
         log:      gutil.log
     } );
@@ -30,8 +30,8 @@ gulp.task( 'deploy', function () {
     ];
  
     return gulp.src( globs, { base: '.', buffer: false } )
-        .pipe( conn.newer( '/atel.simon-jacks.co.uk/wp-content/themes/atelier-blank' ) ) // only upload newer files
-        .pipe( conn.dest( '/atel.simon-jacks.co.uk/wp-content/themes/atelier-blank' ) );
+        .pipe( conn.newer( '/public_html/wp-content/themes/atelier-blank' ) ) // only upload newer files
+        .pipe( conn.dest( '/public_html/wp-content/themes/atelier-blank' ) );
  
 } );
 
