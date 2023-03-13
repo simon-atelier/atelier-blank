@@ -14,18 +14,6 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
-$slanted = get_field('slanted_background');
-$bordered = get_field('cp_bordered_panels');
-$jagged = get_field('jagged_background');
-if($slanted) $className .= ' slanted';
-if($bordered) $className .= ' bordered';
-if($jagged) $className .= ' seacity';
-
-$no_pad_top = get_field('remove_padding_top');
-if($no_pad_top) $className .= ' noPadTop';
-
-$no_pad_bottom = get_field('remove_padding_bottom');
-if($no_pad_bottom) $className .= ' noPadBottom';
 
 $cp_panels = get_field_object('cp_panels');
 $background = get_field('background_colour');
