@@ -4,6 +4,9 @@
 @import "mixins";
 @import "global";
 
+html :where(.editor-styles-wrapper) {
+	font-family: $body-font-family !important;
+}
 .wp-core-ui {
 	.acf-block-preview {
 		@include foundation-button;
@@ -12,12 +15,17 @@
 		@include foundation-typography;
 	}
 }
+.button {
+	text-align: center;
+}
 
 .wp-block{
     max-width: 1160px;
+    margin: 0 auto;
 }
 .wp-block[data-align=wide] { /* it can be "data-align=full" and also "right", "left" and "center" */
     max-width: 1228px;
+    margin: 0 auto;
 }
 .wp-block.is-selected {
     background-color: #e0e0e0;
