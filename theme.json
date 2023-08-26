@@ -1,0 +1,9 @@
+{
+	"version": 1,
+	"settings": {
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	}
+}
