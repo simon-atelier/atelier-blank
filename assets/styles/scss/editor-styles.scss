@@ -6,13 +6,19 @@
 
 html :where(.editor-styles-wrapper) {
 	font-family: $body-font-family !important;
+	h1,h2,h3,h4,h5,h6 {
+		font-family: $header-font-family !important;
+	}
+	* {
+		box-sizing: border-box;
+	}
 }
 .wp-core-ui {
 	.acf-block-preview {
 		@include foundation-button;
 		@include foundation-xy-grid-classes;
 		@include foundation-accordion;
-		@include foundation-typography;
+		// @include foundation-typography;
 	}
 }
 .button {
@@ -20,11 +26,11 @@ html :where(.editor-styles-wrapper) {
 }
 
 .wp-block{
-    max-width: 1160px;
+    max-width: 1220px;
     margin: 0 auto;
 }
 .wp-block[data-align=wide] { /* it can be "data-align=full" and also "right", "left" and "center" */
-    max-width: 1228px;
+    max-width: 1420px;
     margin: 0 auto;
 }
 .wp-block.is-selected {
@@ -35,6 +41,6 @@ html :where(.editor-styles-wrapper) {
 		pointer-events:none;
 		.swiper {
 			display: none;
-		}	
+		}
 	}
 }
