@@ -4,8 +4,8 @@ echo "Please enter name of block (kebab-case)..."
 read strval
 len=`expr "$strval" : '.*'`
 
-if [ $len -ge 20 ]; then echo "error" ; exit
-else echo "Block name OK!"
+if [ $len -ge 30 ]; then echo "error" ; exit
+else echo "Block name OK"
 fi
 
 # Get current path in theme
@@ -22,7 +22,6 @@ then
 else
    echo "<?php
 if ( ! defined( 'ABSPATH' ) ) exit; 
-include( __DIR__ . '/../../styles.php');
 
 \$id = '$strval-' . \$block['id'];
 if( !empty(\$block['anchor']) ) {
@@ -41,7 +40,7 @@ if( !empty(\$block['align']) ) {
 
 ?>
 
-<section id='<?php echo esc_attr(\$id); ?>' class='<?php echo esc_attr(\$className); ?>'<?php if (!empty(\$style_string)) echo ' style="' . \$style_string . '"'; ?>>
+<section id='<?php echo esc_attr(\$id); ?>' class='<?php echo esc_attr(\$className); ?>'>
     <?= \$fields['field'] ?>
 </section>
 " > "$strval-block.php"
@@ -71,3 +70,33 @@ else
 // })(jQuery)
 " > "$strval.js"
 fi
+
+
+# Write out new block.json file if file doesn't already exist
+if [ -f "block.json" ];
+then
+   exit 1
+else
+   echo "{
+    \"name\": \"$strval\",
+    \"title\": \"$strval\",
+    \"description\": \"\",
+    \"style\": \"file:./$strval.css\",
+    \"category\": \"flexi-blocks\",
+    \"icon\": \"welcome-widgets-menus\",
+    \"keywords\": [\"$strval\"],
+    \"acf\": {
+        \"mode\": \"auto\",
+        \"renderTemplate\": \"$strval-block.php\"
+    },
+    \"supports\": {
+        \"spacing\": {
+            \"margin\": true,
+            \"padding\": true
+        }
+    }
+}
+" > "block.json"
+fi
+
+echo "Block created"
