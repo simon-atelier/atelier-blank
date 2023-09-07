@@ -60,17 +60,6 @@ else
 " > "$strval.scss"
 fi
 
-# Write out new javscript file if file doesn't already exist
-if [ -f "$strval.js" ];
-then
-   exit 1
-else
-   echo "// (() => {
-
-// })(jQuery)
-" > "$strval.js"
-fi
-
 
 # Write out new block.json file if file doesn't already exist
 if [ -f "block.json" ];
