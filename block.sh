@@ -22,6 +22,7 @@ then
 else
    echo "<?php
 if ( ! defined( 'ABSPATH' ) ) exit; 
+include( __DIR__ . '/../../styles.php');
 
 \$id = '$strval-' . \$block['id'];
 if( !empty(\$block['anchor']) ) {
@@ -40,7 +41,7 @@ if( !empty(\$block['align']) ) {
 
 ?>
 
-<section id='<?php echo esc_attr(\$id); ?>' class='<?php echo esc_attr(\$className); ?>'>
+<section id=\"<?php echo esc_attr($id); ?>\" class=\"<?php echo esc_attr($className); ?>\"<?php if (!empty(\$style_string)) echo \" style='\" . \$style_string . \"'; ?>>
     <?= \$fields['field'] ?>
 </section>
 " > "$strval-block.php"
@@ -59,6 +60,7 @@ else
 }
 " > "$strval.scss"
 fi
+
 
 
 # Write out new block.json file if file doesn't already exist
@@ -87,5 +89,7 @@ else
 }
 " > "block.json"
 fi
+
+
 
 echo "Block created"
