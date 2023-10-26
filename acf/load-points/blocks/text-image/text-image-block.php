@@ -1,7 +1,6 @@
 <?php
-
 if ( ! defined( 'ABSPATH' ) ) exit; 
-
+include( __DIR__ . '/../../styles.php');
 
 $id = 'text-image-' . $block['id'];
 if( !empty($block['anchor']) ) {
@@ -19,7 +18,7 @@ if( !empty($block['align']) ) {
 $fields = get_field('text_image_fields');
 
 ?>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?php if (!empty($style_string)) echo " style='" . $style_string . "'"; ?>>
     <?php 
         $image = $fields['image'];
         $button = $fields['button'];

@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; 
+include( __DIR__ . '/../../styles.php');
 
 $id = 'button-block-' . $block['id'];
 if( !empty($block['anchor']) ) {
@@ -16,7 +18,7 @@ if( !empty($block['align']) ) {
 $button = get_field('button_link'); 
 
 ?>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?php if (!empty($style_string)) echo " style='" . $style_string . "'"; ?>>
     <p>
         <a class="button <?= get_field('button_colour') ?> <?= get_field('button_size') ?>" 
         	href="<?= $button['url'] ?>"

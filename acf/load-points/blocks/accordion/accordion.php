@@ -1,9 +1,10 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; 
+include( __DIR__ . '/../../styles.php');
 
-$id = 'accordion-block-' . ['id'];
-if( !empty(['anchor']) ) {
-    $id = ['anchor'];
+$id = 'accordion-block-' . $block['id'];
+if( !empty($block['anchor']) ) {
+    $id = $block['anchor'];
 }
 
 $className = 'accordion-block custom-block';
@@ -16,7 +17,7 @@ if( !empty($block['align']) ) {
 
 ?>
 
-<section id='<?php echo esc_attr($id); ?>' class='<?php echo esc_attr($className); ?>'>
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?php if (!empty($style_string)) echo " style='" . $style_string . "'"; ?>>
 	  <?php if(have_rows('accordion')) : ?>
 	  	<?php $i = 1; ?>
 	  	<ul class="accordion" data-accordion>

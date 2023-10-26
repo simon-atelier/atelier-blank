@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; 
+include( __DIR__ . '/../../styles.php');
 
 $id = 'content-container-' . $block['id'];
 if( !empty($block['anchor']) ) {
@@ -17,7 +19,7 @@ if( !empty($block['align']) ) {
 $container_size = get_field('cc_container_width');
 
 ?>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?php if (!empty($style_string)) echo " style='" . $style_string . "'"; ?>>
 	<?php if ( $container_size == "small" ): ?>
 	<div class="small-container">
 	<?php elseif($container_size == "medium"): ?>

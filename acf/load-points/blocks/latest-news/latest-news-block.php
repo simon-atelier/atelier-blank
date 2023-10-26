@@ -1,6 +1,6 @@
 <?php
-
 if ( ! defined( 'ABSPATH' ) ) exit; 
+include( __DIR__ . '/../../styles.php');
 
 $id = 'latest-news-' . $block['id'];
 if( !empty($block['anchor']) ) {
@@ -21,7 +21,7 @@ $args = array( 'posts_per_page' => $posts_per_page, 'post_type'=> $post_type );
 $myposts = get_posts( $args );
 
 ?>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?php if (!empty($style_string)) echo " style='" . $style_string . "'"; ?>>
     <h2></h2>
     <div class="latest_news_cards">
         <div class="grid-container">

@@ -1,6 +1,6 @@
 <?php
-
 if ( ! defined( 'ABSPATH' ) ) exit; 
+include( __DIR__ . '/../../styles.php');
 
 $id = 'related-posts-' . $block['id'];
 if( !empty($block['anchor']) ) {
@@ -22,7 +22,7 @@ if (empty($posts)) {
 }
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?php if (!empty($style_string)) echo " style='" . $style_string . "'"; ?>>
     <div class="grid-container">
         <div class="grid-x">
             <div class="large-12 cell">

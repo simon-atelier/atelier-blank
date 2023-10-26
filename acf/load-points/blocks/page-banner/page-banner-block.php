@@ -1,6 +1,6 @@
 <?php
-
 if ( ! defined( 'ABSPATH' ) ) exit; 
+include( __DIR__ . '/../../styles.php');
 
 $id = 'page-banner-' . $block['id'];
 if( !empty($block['anchor']) ) {
@@ -19,7 +19,7 @@ $fields = get_field('page_banner_fields');
 $background = $fields['background'];
 
 ?>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?php if (!empty($style_string)) echo " style='" . $style_string . "'"; ?>>
     
     <div class="page-banner-background">
         <?php if ($fields['image_or_video'] == "Video"): ?>

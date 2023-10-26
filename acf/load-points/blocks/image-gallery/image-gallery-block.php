@@ -1,6 +1,6 @@
 <?php
-
 if ( ! defined( 'ABSPATH' ) ) exit; 
+include( __DIR__ . '/../../styles.php');
 
 $id = 'image-gallery-' . $block['id'];
 if( !empty($block['anchor']) ) {
@@ -19,7 +19,7 @@ $gallery = get_field('gallery_block');
 
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?php if (!empty($style_string)) echo " style='" . $style_string . "'"; ?>>
     <div class="gallery_slider-controls">
         <div class="gal-prev">
             <svg xmlns="http://www.w3.org/2000/svg" width="21.782" height="35.766" viewBox="0 0 21.782 35.766"><path d="M2.871-17.144a1.787,1.787,0,0,0-.656,1.395,1.787,1.787,0,0,0,.656,1.395L18.785,1.559a1.98,1.98,0,0,0,2.789,0l1.8-1.8a2.052,2.052,0,0,0,.615-1.395,1.765,1.765,0,0,0-.533-1.395L10.746-15.75,23.461-28.465a1.765,1.765,0,0,0,.533-1.395,2.052,2.052,0,0,0-.615-1.395l-1.8-1.8a1.9,1.9,0,0,0-1.395-.574,1.9,1.9,0,0,0-1.395.574Z" transform="translate(-2.215 33.633)"/></svg>

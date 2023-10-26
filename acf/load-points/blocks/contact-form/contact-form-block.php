@@ -1,6 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; 
-
+include( __DIR__ . '/../../styles.php');
 
 $id = 'contact-form-' . $block['id'];
 if( !empty($block['anchor']) ) {
@@ -19,7 +19,7 @@ $fields = get_field('signup_fields');
 
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?php if (!empty($style_string)) echo " style='" . $style_string . "'"; ?>>
    <div class="grid-container">
         <div class="grid-x grid-margin-x">
             <?php if(!empty(get_field('form_title'))): ?>

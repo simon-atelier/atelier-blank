@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; 
+include( __DIR__ . '/../../styles.php');
 
 $id = 'cta-strip-' . $block['id'];
 if( !empty($block['anchor']) ) {
@@ -16,7 +18,7 @@ if( !empty($block['align']) ) {
 $fields = get_field('cta_strip_fields'); 
 
 ?>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">    
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"<?php if (!empty($style_string)) echo " style='" . $style_string . "'"; ?>>
     <div class="cta_strip">
         <div class="cta_strip-text">
             <h3><?= $fields['title'] ?></h3>
