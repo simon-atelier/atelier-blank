@@ -27,11 +27,13 @@ html :where(.editor-styles-wrapper) {
 
 .wp-block{
     max-width: 1220px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 .wp-block[data-align=wide] { /* it can be "data-align=full" and also "right", "left" and "center" */
     max-width: 1420px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 .wp-block.is-selected {
     background-color: #e0e0e0;
