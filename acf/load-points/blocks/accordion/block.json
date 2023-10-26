@@ -1,0 +1,20 @@
+{
+    "name": "accordion",
+    "title": "Accordion",
+    "description": "Accordion container",
+    "style": "file:./accordion.css",
+    "category": "flexi-blocks",
+    "icon": "welcome-widgets-menus",
+    "keywords": ["container", "content", "box"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "accordion-block.php",
+        "jsx": true
+    },
+    "supports": {
+        "spacing": {
+            "margin": true,
+            "padding": true
+        }
+    }
+}

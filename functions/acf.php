@@ -1,30 +1,30 @@
 <?php
-function block_append($block_name) {
-	$filename = get_template_directory() . '/acf/acf_blocks.php';
-	$append_content = "
-			acf_register_block_type( build_acf_block( 
-	            '" . $block_name . "',
-	            '" . str_replace("-", " ", ucfirst($block_name)) . "',
-	            '" . str_replace("-", " ", ucfirst($block_name)) . "',
-	        ));
-		} 
-	}";
+// function block_append($block_name) {
+// 	$filename = get_template_directory() . '/acf/acf_blocks.php';
+// 	$append_content = "
+// 			acf_register_block_type( build_acf_block( 
+// 	            '" . $block_name . "',
+// 	            '" . str_replace("-", " ", ucfirst($block_name)) . "',
+// 	            '" . str_replace("-", " ", ucfirst($block_name)) . "',
+// 	        ));
+// 		} 
+// 	}";
 
-	// Get list of currently registered blocks to filter
-	$key_exists = false;
-	$current_acf_blocks = acf_get_block_types();
-	foreach ($current_acf_blocks as $block_key => $block_val) {
-		if(strpos($block_key, $block_name) !== false ) $key_exists = true;
-	}
+// 	// Get list of currently registered blocks to filter
+// 	$key_exists = false;
+// 	$current_acf_blocks = acf_get_block_types();
+// 	foreach ($current_acf_blocks as $block_key => $block_val) {
+// 		if(strpos($block_key, $block_name) !== false ) $key_exists = true;
+// 	}
 
-	if (!$key_exists) {
-		// Declare block in acf_blocks.php
-		$file = fopen($filename, "c");
-		fseek($file, -5, SEEK_END);
-		fwrite($file, $append_content);
-		fclose($file);
-	}
-}
+// 	if (!$key_exists) {
+// 		// Declare block in acf_blocks.php
+// 		$file = fopen($filename, "c");
+// 		fseek($file, -5, SEEK_END);
+// 		fwrite($file, $append_content);
+// 		fclose($file);
+// 	}
+// }
 
 
 function build_acf_block($id, $title, $description, $icon = "welcome-widgets-menus"){
@@ -192,7 +192,7 @@ function flexi_import_update() {
 	$import_keys = $_REQUEST['importArray'];
 	foreach ($import_keys as $import_key) {
 		flexi_default_acf_fields($import_key);
-		block_append($import_key);	
+		// block_append($import_key);	
 		rename(get_template_directory() . "/acf/load-points/blocks/" . $import_key, get_template_directory() . "/acf/blocks/" . $import_key);
 	}
 	exit('Fields imported');
