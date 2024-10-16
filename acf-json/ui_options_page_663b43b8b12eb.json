@@ -1,0 +1,22 @@
+{
+    "key": "ui_options_page_663b43b8b12eb",
+    "title": "Megamenu",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Megamenu",
+    "menu_slug": "megamenu",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "dashicons-welcome-widgets-menus",
+    "menu_title": "Mega Menu",
+    "position": 35,
+    "redirect": 0,
+    "description": "Edit the megamenu",
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1715602034
+}

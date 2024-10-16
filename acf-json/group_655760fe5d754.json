@@ -1,0 +1,147 @@
+{
+    "key": "group_655760fe5d754",
+    "title": "[All] General Settings",
+    "fields": [
+        {
+            "key": "field_655760fe63fe2",
+            "label": "General Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_655760fe67abd",
+            "label": "Button Styling",
+            "name": "button_styling",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "primary": "Primary",
+                "secondary": "Secondary"
+            },
+            "default_value": "primary",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 1,
+            "placeholder": ""
+        },
+        {
+            "key": "field_655760fe6b68a",
+            "label": "Padding",
+            "name": "block_padding",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "padding-top-large": "[Extra Large] Top",
+                "padding-bottom-large": "[Extra Large] Bottom",
+                "padding-top": "[Large] Top",
+                "padding-bottom": "[Large] Bottom",
+                "padding-top-regular": "[Regular] Top",
+                "padding-bottom-regular": "[Regular] Bottom"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "multiple": 1,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_655760fe6f286",
+            "label": "Drop Shadow",
+            "name": "drop_shadow",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_655760fe72d68",
+            "label": "Background Colour",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "bg-primary": "Primary",
+                "bg-secondary": "Secondary",
+                "bg-grey": "Grey",
+                "bg-black": "Black",
+                "bg-none": "None"
+            },
+            "default_value": "bg-none",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 1,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1715594746
+}
